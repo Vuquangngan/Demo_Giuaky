@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- Nhập tên sách -->
+        <TextView
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên sách :"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edtTenSach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên sách" />
+    </LinearLayout>
+
+    <!--Nhập tên tác giả-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Tác giả : "
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/edtTacgia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập tác giả"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
+
+    <!--Nhập ngay xuất bản-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Ngày xuất bản : "/>
+
+        <EditText
+            android:id="@+id/edtNgayxuatban"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ngày xuất bản"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <!-- Nhập số trang -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Số trang : "/>
+
+        <EditText
+            android:id="@+id/edtSoTrang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Số trang"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <!-- Nút thêm sách -->
+
+        <!-- Nút sửa sách -->
+        <Button
+            android:id="@+id/btnThem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Thêm sách" />
+
+        <Button
+            android:id="@+id/btnSua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sửa sách"
+            android:layout_marginEnd="16dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <!-- Nút xóa sách -->
+        <Button
+            android:id="@+id/btnXoa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xóa sách"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+    <!-- Danh sách sách -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBooks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+</LinearLayout>
+
+
+
