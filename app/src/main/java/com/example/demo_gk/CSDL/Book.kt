@@ -9,6 +9,6 @@ data class Book (
     val id: Int = 0,
     val tenSach: String,
     val tacGia: String,
-    val ngayXuatBan:String,
+    val ngayXuatBan: String,
     val soTrang: Int
 )

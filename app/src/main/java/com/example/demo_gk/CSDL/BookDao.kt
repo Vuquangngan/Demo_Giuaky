@@ -14,10 +14,10 @@ interface BookDao {
     fun getAllBooks(): LiveData<List<Book>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun intsert(book: Book)
+    suspend fun insert(book: Book)
 
     @Update
-    suspend fun upadate(book: Book)
+    suspend fun update(book: Book)
 
     @Delete
     suspend fun delete(book: Book)
