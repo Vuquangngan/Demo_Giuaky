@@ -1,7 +1,9 @@
-package com.example.demo_gk.CSDL
+package com.example.demo_gk.di
 
 import android.content.Context
 import androidx.room.Room
+import com.example.demo_gk.CSDL.AppDatabase
+import com.example.demo_gk.CSDL.BookDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

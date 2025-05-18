@@ -1,6 +1,8 @@
-package com.example.demo_gk.CSDL
+package com.example.demo_gk.repository
 
 import androidx.lifecycle.LiveData
+import com.example.demo_gk.CSDL.Book
+import com.example.demo_gk.CSDL.BookDao
 import javax.inject.Inject
 
 class BookRepository @Inject constructor(

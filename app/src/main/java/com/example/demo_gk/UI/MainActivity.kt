@@ -1,4 +1,4 @@
-package com.example.demo_gk
+package com.example.demo_gk.UI
 
 
 import android.os.Bundle
@@ -8,8 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.demo_gk.CSDL.Book
-import com.example.demo_gk.CSDL.BookAdapter
-import com.example.demo_gk.CSDL.BookViewModel
 import com.example.demo_gk.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 

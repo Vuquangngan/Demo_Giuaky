@@ -1,4 +1,4 @@
-package com.example.demo_gk.CSDL
+package com.example.demo_gk.UI
 
 import android.view.LayoutInflater
 import android.view.View
