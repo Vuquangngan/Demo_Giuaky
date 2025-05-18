@@ -1,4 +1,4 @@
-package com.example.demo_gk.UI
+package com.example.demo_gk.ViewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

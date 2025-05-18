@@ -1,4 +1,4 @@
-package com.example.demo_gk.UI
+package com.example.demo_gk.Adapter
 
 import android.view.LayoutInflater
 import android.view.View

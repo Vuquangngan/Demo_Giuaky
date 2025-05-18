@@ -7,7 +7,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.demo_gk.Adapter.BookAdapter
 import com.example.demo_gk.CSDL.Book
+import com.example.demo_gk.ViewModel.BookViewModel
 import com.example.demo_gk.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
