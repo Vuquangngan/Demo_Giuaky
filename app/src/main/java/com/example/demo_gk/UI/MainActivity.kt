@@ -1,23 +1,21 @@
 package com.example.demo_gk.UI
 
 
-import android.app.DatePickerDialog
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.demo_gk.Adapter.BookAdapter
 import com.example.demo_gk.CSDL.Book
 import com.example.demo_gk.ViewModel.BookViewModel
 import com.example.demo_gk.databinding.ActivityMainBinding
+import com.example.demo_gk.util.DatePickerHelper
 import dagger.hilt.android.AndroidEntryPoint
-import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Date
-import java.util.Locale
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -33,6 +31,25 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Khoi tao DatePickerHelper
+        val datePickerHelper = DatePickerHelper(
+            context = this,
+            editText =  binding.edtNgayxuatban
+        )
+
+        //Mo DatePicker khi click vao EditText
+        //binding.edtNgayxuatban.setOnClickListener(
+        //    datePickerHelper.showDatePicker()
+        //)
+        binding.edtNgayxuatban.setOnClickListener { view ->
+            datePickerHelper.showDatePicker(view)
+        }
+        binding.btnDatePicker.setOnClickListener{
+            view ->
+            datePickerHelper.showDatePicker(view)
+        }
+        DatePickerHelper.disableKeyboardInput(binding.edtNgayxuatban)
+
         adapter = BookAdapter { bookClicked ->
             // Xử lý khi click vào một cuốn sách
             selectedBook = bookClicked
@@ -43,6 +60,7 @@ class MainActivity : AppCompatActivity() {
             binding.edtTacgia.setText(bookClicked.tacGia)
             binding.edtNgayxuatban.setText(bookClicked.ngayXuatBan)
             binding.edtSoTrang.setText(bookClicked.soTrang.toString())
+
         }
 
         binding.rvBooks.layoutManager = LinearLayoutManager(this)

@@ -4,14 +4,28 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:layout_width="match_parent"
+    android:background="#BBDBE9"
     android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textColor="#005497"
+        android:text="QUẢN LÝ SÁCH"
+        />
 
+
+    <!-- Tên sách  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <!-- Nhập tên sách -->
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
+
         <TextView
+            android:textColor="#007DDC"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,13 +39,15 @@
             android:hint="Tên sách" />
     </LinearLayout>
 
-    <!--Nhập tên tác giả-->
+    <!-- Tác giả  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
 
         <TextView
+            android:textColor="#007DDC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
@@ -44,36 +60,56 @@
             android:layout_height="wrap_content"
             android:hint="Nhập tác giả"
             android:inputType="textPersonName" />
-
     </LinearLayout>
 
-    <!--Nhập ngay xuất bản-->
+    <!-- Ngày xuất bản  -->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
 
         <TextView
+            android:textColor="#007DDC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:textStyle="bold"
             android:text="Ngày xuất bản : "/>
 
-        <EditText
-            android:id="@+id/edtNgayxuatban"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ngày xuất bản"
-            android:inputType="number" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edtNgayxuatban"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="dd/MM/yyyy"
+                android:inputType="none"
+                android:focusable="false"
+                android:clickable="true" />
+
+            <ImageButton
+                android:id="@+id/btnDatePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_my_calendar"
+                android:contentDescription="Chọn ngày"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+        </LinearLayout>
     </LinearLayout>
 
-    <!-- Nhập số trang -->
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
 
         <TextView
+            android:textColor="#007DDC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
@@ -85,52 +121,45 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Số trang"
-            android:inputType="number" />
+            android:inputType="numberDecimal" />
     </LinearLayout>
 
+    <!-- Các nút (ĐÃ SỬA margin) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
 
-        <!-- Nút thêm sách -->
-
-        <!-- Nút sửa sách -->
         <Button
+            android:backgroundTint="#03A9F4"
             android:id="@+id/btnThem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
+
             android:text="Thêm sách" />
 
         <Button
+            android:backgroundTint="#03A9F4"
             android:id="@+id/btnSua"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sửa sách"
-            android:layout_marginEnd="16dp"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_marginEnd="8dp"/>
 
-        <!-- Nút xóa sách -->
         <Button
+            android:backgroundTint="#03A9F4"
             android:id="@+id/btnXoa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Xóa sách"
-            android:layout_gravity="center_horizontal"/>
-
+            android:text="Xóa sách"/>
     </LinearLayout>
-    <!-- Danh sách sách -->
+
+    <!-- RecyclerView (giữ nguyên) -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvBooks"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        />
-
+        android:layout_weight="1" />
 </LinearLayout>
-
-
-
